@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="s.css" rel="stylesheet">
+      <title>Slate Dashboard</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='s.css') }}">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+      <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui-pro@5.9.0/dist/css/coreui.min.css" rel="stylesheet">
+      <title>CoreUI Calendar Example</title>
+      <script defer src="https://cdn.jsdelivr.net/npm/@coreui/coreui-pro@5.9.0/dist/js/coreui.bundle.min.js"></script>
+   </head>
+   <body class="light-mode">
+      <div class="body">
+         <div class="side_container">
+            <h4>
+               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" "margin:5px;">
+               <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+               <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+               </svg>Student Hub
+            </h4>
+            <dl>
+               <dt><a href="#">Dashboard</a></dt>
+               <dt> <a href="#">Teachers</a></dt>
+               <dt><a href="#">Student</a></dt>
+               <dt><a href="#">Attendance </a></dt>
+               <dt><a href="#">Finance </a></dt>
+               <dt><a href="#">Notice </a></dt>
+               <dt><a href="#">Calendar </a></dt>
+               <dt><a href="#">Library </a></dt>
+               <dt><a href="#">Massage </a></dt>
+               <h5>Others</h5>
+               <dt><a href="#">Profile </a></dt>
+               <dt><a href="#">Setting </a></dt>
+            </dl>
+         </div>
+         <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+         <div class="nav-menu" id="navMenu">
+            <span class="close-btn" onclick="toggleMenu()">&times;</span>
+            <a href="#">Teachers</a></dt>
+            <a href="#">Student</a>
+            <a href="#">Attendance </a>
+            <a href="#">Finance </a>
+            <a href="#">Notice </a>
+            <a href="#">Calendar </a>
+            <a href="#">Library </a>
+         </div>
+         <script>
+            function toggleMenu() {
+                var nav = document.getElementById("navMenu");
+                if (nav.style.left === "0px") {
+                    nav.style.left = "-250px";
+                } else {
+                    nav.style.left = "0px";
+                }
+            }
+         </script>
+         <div class="middle">
+            <div class="nav">
+               <input type="text" placeholder="Search.." class="search">
+               <div class="logo"></div>
+               <button type="submit" class="logout"><a href="{{ url_for('logout') }}">Logout</a></button>
+            </div>
+            <div class="profile-col">
+               <div class="profile">
+                  <div class="des">
+                     <h2>Welcome,Biswajit Kar</h2>
+                     <hr>
+                     <p>In this example, the three divs will float next to each other.</p>
+                     <h4>12 Grade</h4>
+                     <h4>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16" style="margin:5px;padding:0px;">
+                           <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+                           <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                        </svg>
+                        jan.07.1990
+                     </h4>
+                     <h4>abcd@gmail.com</h4>
+                     <h4 class="ph">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16"  style="margin:5px;padding:0px;">
+                           <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                        </svg>
+                        7029270731
+                     </h4>
+                  </div>
+                  <div class="pic"></div>
+               </div>
+               <div class="profile-side">
+                  <div class="detail">
+                     <div class="attendance">
+                        <p>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-app-indicator" viewBox="0 0 16 16" style="margin:10px;padding:0px;">
+                              <path d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1z"/>
+                              <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                           </svg>
+                           Attendance(Weekly) 
+                        </p>
+                        <div class="attendance-c">
+                           <div class="attendance-d">
+                              <p style ="text-align:center;">50%</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="assignment-1">
+                        <h2>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list-task" viewBox="0 0 16 16" style="margin:10px;padding:0px;">
+                              <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5zM3 3H2v1h1z"/>
+                              <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1z"/>
+                              <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5zM2 7h1v1H2zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm1 .5H2v1h1z"/>
+                           </svg>
+                           125+
+                        </h2>
+                        <P>Task Complete </p>
+                     </div>
+                  </div>
+                  <div class="detail">
+                     <div class="attendance-1">
+                        <h2>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-shield-check" viewBox="0 0 16 16" style="margin:10px;padding:0px;">
+                              <path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/>
+                              <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+                           </svg>
+                           25+
+                        </h2>
+                        <p>Reward Points </p>
+                     </div>
+                     <div class="assignment">
+                        <p>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16" style="margin:10px;padding:0px;">
+                              <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+                              <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+                           </svg>
+                           Task in Progress 
+                        </p>
+                        <div class="assignment-c">
+                           <div class="assignment-d">
+                              <p style ="text-align:center;">80%</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="score">
+               <div class="score-details">
+                  <h2>
+                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16" style="margin:10px;padding:0px;">
+                        <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2"/>
+                     </svg>
+                     Score :
+                  </h2>
+                  <hr>
+                  <div class="outer">
+                     <div class="inner">
+                        <p style="text-align:center;padding-top:50px;">7.97<br>SGPA</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

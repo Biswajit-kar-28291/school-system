@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Login</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+   </head>
+   <body class="light-mode">
+      <div class="head">
+         <div class="logo"></div>
+         <div class="logoo">
+            <button class="toggle-btn" onclick="toggleMode()"></button>
+            <button class="toggle-o-btn" onclick="toggle_O_Mode()"></button>
+            <button class="toggle-g-btn" onclick="toggle_G_Mode()"></button>
+         </div>
+      </div>
+      <div class="body" >
+         <div class="container_1">
+            <h2>Login</h2>
+            {% if error %}
+            <p class="error">{{ error }}</p>
+            {% endif %}
+            <form method="POST">
+               <input type="text" name="username" placeholder="Username:student" required>
+               <input type="password" name="password" placeholder="Password:student123" required>
+               <div>
+                  <h2 style="margin-right:30px;">Role</h2>
+                  <select name="role" class="role" required>
+                     <option value="">Select</option>
+                     <option value="Admin">Admin</option>
+                     <option value="School">School</option>
+                     <option value="Parent">Parent</option>
+                     <option value="Student">Student</option>
+                  </select>
+               </div>
+               <button type="submit" class="btn">Login</button>
+            </form>
+         </div>
+      </div>
+      <div class="footer">
+         <p>Biswajit Kar | 2022 Batch | copyright,2022</p>
+      </div>
+      <script>
+         function toggleMode() {
+             const body = document.body;
+             if (body.classList.contains("light-mode")) {
+                 body.classList.replace("light-mode", "dark-mode");
+             }
+         else if (body.classList.contains("orange-mode")) {
+                 body.classList.replace("orange-mode", "dark-mode");
+             }
+         else if (body.classList.contains("green-mode")) {
+                 body.classList.replace("green-mode", "dark-mode");
+             }
+         else {
+                 body.classList.replace("dark-mode", "light-mode");
+             }
+         }
+         function toggle_O_Mode() {
+             const body = document.body;
+             if (body.classList.contains("light-mode")) {
+                 body.classList.replace("light-mode", "orange-mode");
+             }
+         else if (body.classList.contains("dark-mode")) {
+                 body.classList.replace("dark-mode", "orange-mode");
+             }
+         else if (body.classList.contains("green-mode")) {
+                 body.classList.replace("green-mode", "orange-mode");
+             }
+         else {
+                 body.classList.replace("orange-mode", "light-mode");
+             }
+         }
+         function toggle_G_Mode() {
+             const body = document.body;
+             if (body.classList.contains("light-mode")) {
+                 body.classList.replace("light-mode", "green-mode");
+             }
+         else if (body.classList.contains("dark-mode")) {
+                 body.classList.replace("dark-mode", "green-mode");
+             }
+         else if (body.classList.contains("orange-mode")) {
+                 body.classList.replace("orange-mode", "green-mode");
+             }
+         else {
+                 body.classList.replace("green-mode", "light-mode");
+             }
+         }
+      </script>
+   </body>
+</html>
